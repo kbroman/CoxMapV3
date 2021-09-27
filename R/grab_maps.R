@@ -15,7 +15,7 @@ if(length(args) > 0) {
 if(length(args) > 1) {
     ofile <- args[2]
 } else {
-    ofile <- "map.rds"
+    ofile <- "map.csv"
 }
 
 map <- NULL
@@ -67,4 +67,4 @@ for(chr in c(1:19, "X")) {
 }
 
 
-saveRDS(map, ofile)
+write.table(map, ofile, quote=FALSE, sep=",", col.names=TRUE, row.names=FALSE)
