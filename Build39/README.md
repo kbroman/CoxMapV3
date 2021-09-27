@@ -9,3 +9,6 @@
   There are 12 markers with missing build 39 position. There is an
   inversion on chr 14 in build 39 vs build 37/38, and one on chr 10 in
   build 38/39 vs build 37.
+
+- [`cox_build39.csv`](cox_build39.csv) - re-estimated Cox map using
+  the build 39 positions. The first marker on each chromosome is at 0 cM.
