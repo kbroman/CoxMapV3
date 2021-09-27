@@ -22,23 +22,31 @@ coordinates.
   Evans and Jill Maddox. it gives slightly different results, but not
   enough to matter.
 
-Data/   - crimap files used for original Cox map
-          (families split and data cleaned)
+- [`Data/`](Data/)
 
-Perl/   - perl scripts used to prepare and run crimap
-          (using version 2.507 of "[CRIMAP Improved](https://www.animalgenome.org/tools/share/crimap/)")
+  - crimap files used for original Cox map (families split and data cleaned)
 
-R/      - script to grab maps from sa*.txt and ss*.txt
-          and save data frame in RDS file
+- [`Perl/`](Perl/)
 
-Work/   - directory where I'm running cri-map and getting estimated
-          maps
+  - perl scripts used to prepare and run crimap (using version 2.507
+    of "[CRIMAP Improved](https://www.animalgenome.org/tools/share/crimap/)")
 
-OrigMaps/  - original (v1 and v2) cox maps
-           - seems like combinedmaps_2008-08-06_clean.csv is the
-             original v1 map
-           - snpmap_rev_2008-12-10.csv was the v2 map with
-             positions shifted to line up 0 Mbp with 0 cM
-           - CoxMaps_rev_build38.csv has build 38 positions added
+- [`R/`](R/)
 
-Build39/  - bp coordinates of Cox markers in build 37, 38, and 39
+ - script to grab maps from sa*.txt and ss*.txt and save data frame in RDS file
+
+- [`OrigMaps/`](OrigMaps/)
+
+  - original (v1 and v2) cox maps
+
+  - seems like combinedmaps_2008-08-06_clean.csv is the original v1
+    map
+
+  - snpmap_rev_2008-12-10.csv was the v2 map with positions shifted to
+    line up 0 Mbp with 0 cM
+
+  - CoxMaps_rev_build38.csv has build 38 positions added
+
+- [`Build39/`]
+
+  - bp coordinates of Cox markers in build 37, 38, and 39
