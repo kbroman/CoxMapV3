@@ -5,22 +5,19 @@ map](https://doi.org/10.1534/genetics.109.105486) to
 [mouse genome build 39](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001635.27/)
 coordinates.
 
-- The original map was with build 37. Markers were shifted so that 0 cM == 0 Mbp.
+The original map was with build 37. Markers were shifted so that 0 cM
+== 0 Mbp. It was later moved to build 38, and at some point we changed
+it to have 0 cM == 3 Mbp. Shifting to build 39 requires dealing with a
+couple of big inversions, particular at (centromeres of chromosome 10
+and 14; it seems like the chr 10 one was introduced in build 38 and is
+now being corrected, while the chr 14 inversion is new).
 
-- It was later moved to build 38, and at some point we changed it to
-  have 0 cM == 3 Mbp.
-
-- Shifting to build 39 requires dealing with a couple of big
-  inversions, particular at (centromeres of chromosome 10 and 14; it
-  seems like the chr 10 one was introduced in build 38 and is now
-  being corrected, while the chr 14 inversion is new).
-
-- The [original crimap
-  software](http://compgen.rutgers.edu/crimap.shtml) doesn't compile
-  on modern systems, so we are now using [CRI-MAP
-  Improved](https://www.animalgenome.org/tools/share/crimap/) by Ian
-  Evans and Jill Maddox. it gives slightly different results, but not
-  enough to matter.
+The [original crimap
+software](http://compgen.rutgers.edu/crimap.shtml) doesn't compile on
+modern systems, so we are now using [CRI-MAP
+Improved](https://www.animalgenome.org/tools/share/crimap/) by Ian
+Evans and Jill Maddox. it gives slightly different results, but not
+enough to matter.
 
 - [`Data/`](Data/)
 
@@ -33,7 +30,7 @@ coordinates.
 
 - [`R/`](R/)
 
- - script to grab maps from sa*.txt and ss*.txt and save data frame in RDS file
+  - script to grab maps from sa*.txt and ss*.txt and save data frame in RDS file
 
 - [`OrigMaps/`](OrigMaps/)
 
@@ -47,6 +44,6 @@ coordinates.
 
   - CoxMaps_rev_build38.csv has build 38 positions added
 
-- [`Build39/`]
+- [`Build39/`](Build39/)
 
   - bp coordinates of Cox markers in build 37, 38, and 39
