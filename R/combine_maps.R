@@ -36,6 +36,7 @@ gmap[gmap$chr=="X", "ave"] <- NA
 gmap[gmap$chr=="X", "male"] <- NA
 
 gmap[,1:2] <- gmap[,2:1]
+colnames(gmap)[1:2] <- c("marker", "chr")
 colnames(gmap)[3:5] <- paste0("cM_coxV3_", colnames(gmap)[3:5])
 
 write.table(gmap, ofile, sep=",", quote=FALSE,

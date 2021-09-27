@@ -1,4 +1,4 @@
-chr,marker,cM_coxV3_ave,cM_coxV3_female,cM_coxV3_male,bp_grcm39,strand_grcm39
+marker,chr,cM_coxV3_ave,cM_coxV3_female,cM_coxV3_male,bp_grcm39,strand_grcm39
 rs3683945,1,0.13524,0.141,0.12933,3267623,+
 rs3707673,1,0.19012,0.24704,0.12933,3477616,+
 rs6269442,1,0.19012,0.24704,0.12933,3562418,+
