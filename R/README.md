@@ -11,3 +11,5 @@
 
 - `subset_genfiles.R` - subset the crimap input files (`*.gen`) to the
   markers that have known build 39 physical positions
+
+- `compare_maps.R` - scraps of R code to compare the original and revised maps
