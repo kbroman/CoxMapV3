@@ -19,6 +19,9 @@ Improved](https://www.animalgenome.org/tools/share/crimap/) by Ian
 Evans and Jill Maddox. it gives slightly different results, but not
 enough to matter.
 
+- [**`cox_v3_map.csv`**](cox_v3_map.csv) - This is the newest Cox
+  genetic map, with build 39 physical positions.
+
 - [`Data/`](Data/)
 
   - crimap files used for original Cox map (families split and data cleaned)
@@ -30,7 +33,8 @@ enough to matter.
 
 - [`R/`](R/)
 
-  - script to grab maps from sa*.txt and ss*.txt and save data frame in RDS file
+  - scripts to merge crimap maps into a CSV file, to reorder the
+    crimap input files, and to combine the genetic and physical maps
 
 - [`OrigMaps/`](OrigMaps/)
 
