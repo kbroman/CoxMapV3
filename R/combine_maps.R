@@ -39,5 +39,8 @@ gmap[,1:2] <- gmap[,2:1]
 colnames(gmap)[1:2] <- c("marker", "chr")
 colnames(gmap)[3:5] <- paste0("cM_coxV3_", colnames(gmap)[3:5])
 
+# shift cM maps again to avoid having 3 Mbp be slightly negative cM
+gmap[,3:5] <- gmap[,3:5] + 0.00001
+
 write.table(gmap, ofile, sep=",", quote=FALSE,
             row.names=FALSE, col.names=TRUE)
