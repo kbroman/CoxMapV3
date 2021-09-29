@@ -35,8 +35,9 @@ abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
 # male length 1327 -> 1325 cM
 
-# they chromosomes looked smaller, but that was because the zero position was included in original maps, which added ~4% length
-# removing those, we end up with maps that are hardly different
+# the chromosomes looked smaller, but that was because the zero position was included
+# in original maps, which added ~4% length; removing those, we end up with maps
+# that are hardly different
 
 orig_c7 <- orig[orig$chr_b37==7,]
 new_c7 <- new[new$chr==7,]
