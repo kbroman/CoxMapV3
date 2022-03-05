@@ -1,7 +1,7 @@
 ## Cox genetic map V3
 
-Working to revise the [Cox genetic
-map](https://doi.org/10.1534/genetics.109.105486) to
+Revised [Cox genetic
+map](https://doi.org/10.1534/genetics.109.105486), for
 [mouse genome build 39](https://www.ncbi.nlm.nih.gov/assembly/GCF_000001635.27/)
 coordinates.
 
