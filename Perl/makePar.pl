@@ -59,7 +59,7 @@ open(PAR, ">$parfile") or die("Cannot write to $parfile in makePar");
 print PAR ("dat_file $datfile *\n");
 print PAR ("gen_file $genfile *\n");
 print PAR ("ord_file $ordfile *\n");
-print PAR ("nb_our_alloc 3000000 *\n");
+print PAR ("nb_our_alloc 300000000 *\n");
 
 if($sexave) { print PAR ("SEX_EQ 1 *\n"); }
 else { print PAR ("SEX_EQ 0 *\n"); }
