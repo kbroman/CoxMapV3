@@ -6,13 +6,19 @@ orig <- data.table::fread(here("OrigMaps/CoxMaps_rev_build38.csv"), data.table=F
 orig <- orig[!grepl("^zero", orig$snpID),]
 new <-  data.table::fread(here("cox_v3_map.csv"), data.table=FALSE)
 
+orig <- orig[orig$snpID %in% new$marker,]
+
 library(qtl2convert)
+orig_phy <- sapply(map_df_to_list(orig, pos_column="bp_b38", marker_column="snpID", chr_column="chr_b38"),
+                   function(a) a/1e6)
+new_phy <- sapply(map_df_to_list(new, pos_column="bp_grcm39"), function(a) a/1e6)
 orig_ave <- map_df_to_list(orig, pos_column="ave_cM", marker_column="snpID", chr_column="chr_b37")
 new_ave <- map_df_to_list(new, pos_column="cM_coxV3_ave")
 orig_mal <- map_df_to_list(orig, pos_column="mal_cM", marker_column="snpID", chr_column="chr_b37")
 new_mal <- map_df_to_list(new, pos_column="cM_coxV3_male")
 orig_fem <- map_df_to_list(orig, pos_column="fem_cM", marker_column="snpID", chr_column="chr_b37")
 new_fem <- map_df_to_list(new, pos_column="cM_coxV3_female")
+
 
 # plot lengths
 z <- cbind(summaryMap(new_ave), summaryMap(orig_ave))
