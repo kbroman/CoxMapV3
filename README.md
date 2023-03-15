@@ -51,3 +51,43 @@ enough to matter.
 - [`Build39/`](Build39/)
 
   - bp coordinates of Cox markers in build 37, 38, and 39
+
+---
+
+### Outline of analysis
+
+1. Run `R/reorder_genfiles.R` to create the crimap input files in the
+   Build39 order. Uses `Data/final_gen.tgz` and creates a set of files
+   in `WorkV3/`.
+
+   You can similarly run `R/subset_genfiles.R`. This creates crimap
+   input files in `WorkV3b/` that have the markers with Build39
+   positions, but without reordering the positions.
+
+2. Within the `WorkV3/` directory:
+
+   a. Run `../Perl/prepCrimap.pl` to
+      run `crimap prepare` for each of the 20 chromosomes.
+
+   b. Run `../Perl/createCrimapRunFiles.pl`. This
+      creates a set of perl scripts plus one bash script, to run crimap
+      for each chromosome (chrompic + sex-averaged and sex-specific
+      maps).
+
+   c. Run `runall.sh` to run crimap on all chromosomes
+   (simultaneously)
+
+3. Run `R/grab_maps.R WorkV3` to grab the estimated map positions and
+   create a combined file `map.csv`.
+
+4. Copy `map.csv` to `Build39/cox_build39.csv`.
+
+5. Run `R/combine_maps.R` to combine the genetic and physical maps in
+   `Build39/` and create the file `cox_v3_map.csv`.
+
+---
+
+### License
+
+Licensed under the
+[MIT license](LICENSE.md). ([More information here](https://en.wikipedia.org/wiki/MIT_License).)
