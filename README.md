@@ -12,8 +12,9 @@ couple of big inversions, particular at (centromeres of chromosome 10
 and 14; it seems like the chr 10 one was introduced in build 38 and is
 now being corrected, while the chr 14 inversion is new).
 
-The [original crimap
-software](http://compgen.rutgers.edu/crimap.shtml) doesn't compile on
+Used the [original crimap
+software](http://compgen.rutgers.edu/crimap.shtml) with a few changes
+to get it to compile; the [revised source is on GitHub](https://github.com/kbroman/crimap).
 modern systems, so we are now using [CRI-MAP
 Improved](https://www.animalgenome.org/tools/share/crimap/) by Ian
 Evans and Jill Maddox. it gives slightly different results, but not
