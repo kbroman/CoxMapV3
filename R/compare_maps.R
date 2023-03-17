@@ -25,21 +25,21 @@ z <- cbind(summaryMap(new_ave), summaryMap(orig_ave))
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# sex-averaged autosomes 1386 cM -> 1383 cM
+# sex-averaged autosomes 1386 cM -> 1385 cM
 
 # plot female lengths
 z <- cbind(summaryMap(new_fem), summaryMap(orig_fem))[1:20,]
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# female length 1518 -> 1512 cM
+# female length 1518 -> 1515 cM
 
 # plot female lengths
 z <- cbind(summaryMap(new_mal), summaryMap(orig_mal))
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# male length 1327 -> 1325 cM
+# male length 1327 -> 1327 cM
 
 # the chromosomes looked smaller, but that was because the zero position was included
 # in original maps, which added ~4% length; removing those, we end up with maps
