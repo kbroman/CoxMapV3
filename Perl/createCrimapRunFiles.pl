@@ -34,7 +34,7 @@ foreach $i (0..($nproc-1)) {
     print OUT ('  system("../Perl/makePar.pl final$chr 0");', "\n");
     print OUT ('  system("crimap final$chr.par fixed > ss$chr.txt");', "\n");
     print OUT ('  system("crimap final$chr.par chrompic > pic$chr.txt");', "\n");
-    print OUT ('  system("makePar.pl final$chr 1");', "\n");
+    print OUT ('  system("../Perl/makePar.pl final$chr 1");', "\n");
     print OUT ('  system("crimap final$chr.par fixed > sa$chr.txt");', "\n");
     print OUT ("}\n");
     system("chmod +x $ofile");

@@ -6,7 +6,12 @@ orig <- data.table::fread(here("OrigMaps/CoxMaps_rev_build38.csv"), data.table=F
 orig <- orig[!grepl("^zero", orig$snpID),]
 new <-  data.table::fread(here("cox_v3_map.csv"), data.table=FALSE)
 
+orig <- orig[orig$snpID %in% new$marker,]
+
 library(qtl2convert)
+orig_phy <- sapply(map_df_to_list(orig, pos_column="bp_b38", marker_column="snpID", chr_column="chr_b38"),
+                   function(a) a/1e6)
+new_phy <- sapply(map_df_to_list(new, pos_column="bp_grcm39"), function(a) a/1e6)
 orig_ave <- map_df_to_list(orig, pos_column="ave_cM", marker_column="snpID", chr_column="chr_b37")
 new_ave <- map_df_to_list(new, pos_column="cM_coxV3_ave")
 orig_mal <- map_df_to_list(orig, pos_column="mal_cM", marker_column="snpID", chr_column="chr_b37")
@@ -14,26 +19,27 @@ new_mal <- map_df_to_list(new, pos_column="cM_coxV3_male")
 orig_fem <- map_df_to_list(orig, pos_column="fem_cM", marker_column="snpID", chr_column="chr_b37")
 new_fem <- map_df_to_list(new, pos_column="cM_coxV3_female")
 
+
 # plot lengths
 z <- cbind(summaryMap(new_ave), summaryMap(orig_ave))
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# sex-averaged autosomes 1386 cM -> 1383 cM
+# sex-averaged autosomes 1386 cM -> 1385 cM
 
 # plot female lengths
 z <- cbind(summaryMap(new_fem), summaryMap(orig_fem))[1:20,]
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# female length 1518 -> 1512 cM
+# female length 1518 -> 1515 cM
 
 # plot female lengths
 z <- cbind(summaryMap(new_mal), summaryMap(orig_mal))
 grayplot(z[,2], z[,6])
 abline(0,1)
 text(z[,2], z[,6]+1, c(1:19, "X"))
-# male length 1327 -> 1325 cM
+# male length 1327 -> 1327 cM
 
 # the chromosomes looked smaller, but that was because the zero position was included
 # in original maps, which added ~4% length; removing those, we end up with maps
