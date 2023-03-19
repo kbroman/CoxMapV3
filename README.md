@@ -7,18 +7,14 @@ coordinates.
 
 The original map was with build 37. Markers were shifted so that 0 cM
 == 0 Mbp. It was later moved to build 38, and at some point we changed
-it to have 0 cM == 3 Mbp. Shifting to build 39 requires dealing with a
-couple of big inversions, particular at (centromeres of chromosome 10
+it to have 0 cM == 3 Mbp. Shifting to build 39 required dealing with a
+couple of big inversions at centromeres of chromosome 10
 and 14; it seems like the chr 10 one was introduced in build 38 and is
-now being corrected, while the chr 14 inversion is new).
+now being corrected, while the chr 14 inversion is new.
 
-Used the [original crimap
+We used the [original Cri-Map
 software](http://compgen.rutgers.edu/crimap.shtml) with a few changes
 to get it to compile; the [revised source is on GitHub](https://github.com/kbroman/crimap).
-modern systems, so we are now using [CRI-MAP
-Improved](https://www.animalgenome.org/tools/share/crimap/) by Ian
-Evans and Jill Maddox. it gives slightly different results, but not
-enough to matter.
 
 - [**`cox_v3_map.csv`**](cox_v3_map.csv) - This is the newest Cox
   genetic map, with build 39 physical positions.
@@ -41,13 +37,13 @@ enough to matter.
 
   - original (v1 and v2) cox maps
 
-  - seems like combinedmaps_2008-08-06_clean.csv is the original v1
+  - `combinedmaps_2008-08-06_clean.csv` is the original v1
     map
 
-  - snpmap_rev_2008-12-10.csv was the v2 map with positions shifted to
+  - `snpmap_rev_2008-12-10.csv` was the v2 map with positions shifted to
     line up 0 Mbp with 0 cM
 
-  - CoxMaps_rev_build38.csv has build 38 positions added
+  - `CoxMaps_rev_build38.csv` has build 38 positions added
 
 - [`Build39/`](Build39/)
 
@@ -58,11 +54,11 @@ enough to matter.
 ### Outline of analysis
 
 1. Run `R/reorder_genfiles.R` to create the crimap input files in the
-   Build39 order. Uses `Data/final_gen.tgz` and creates a set of files
+   build 39 order. Uses `Data/final_gen.tgz` and creates a set of files
    in `WorkV3/`.
 
    You can similarly run `R/subset_genfiles.R`. This creates crimap
-   input files in `WorkV3b/` that have the markers with Build39
+   input files in `WorkV3b/` that have the subset of markers with build 39
    positions, but without reordering the positions.
 
 2. Within the `WorkV3/` directory:
@@ -76,7 +72,7 @@ enough to matter.
       maps).
 
    c. Run `runall.sh` to run crimap on all chromosomes
-   (simultaneously)
+      (simultaneously)
 
 3. Run `R/grab_maps.R WorkV3` to grab the estimated map positions and
    create a combined file `map.csv`.
